@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="setOps.js"></script>
+	<link rel="shortcut icon" type="image/png" href="favicon.png">
+	<title>Sudoku Solver by Rishi Bawdekar</title>
+
+</head>
+
+<body>
+	
+	<div id="bottom">
+	
+	<div id="botleft">
+	<br></br>
+		<table border="2" style="border-collapse: collapse;" id="table">
+			<tr>
+				<td contenteditable='true' tabindex = 1></td>
+				<td contenteditable='true' tabindex = 1></td>
+				<td contenteditable='true' tabindex = 1></td>
+				<td contenteditable='true' tabindex = 4 class="side-border"></td>
+				<td contenteditable='true' tabindex = 4></td>
+				<td contenteditable='true' tabindex = 4></td>
+				<td contenteditable='true' tabindex = 7 class="side-border"></td>
+				<td contenteditable='true' tabindex = 7></td>
+				<td contenteditable='true' tabindex = 7></td>
+			</tr>
+			<tr>
+				<td contenteditable='true' tabindex = 1></td>
+				<td contenteditable='true' tabindex = 1></td>
+				<td contenteditable='true' tabindex = 1></td>
+				<td contenteditable='true' tabindex = 4 class="side-border"></td>
+				<td contenteditable='true' tabindex = 4></td>
+				<td contenteditable='true' tabindex = 4></td>
+				<td contenteditable='true' tabindex = 7 class="side-border"></td>
+				<td contenteditable='true' tabindex = 7></td>
+				<td contenteditable='true' tabindex = 7></td>
+			</tr>
+			<tr class="border-bottom">
+				<td contenteditable='true' tabindex = 1></td>
+				<td contenteditable='true' tabindex = 1></td>
+				<td contenteditable='true' tabindex = 1></td>
+				<td contenteditable='true' tabindex = 4 class="side-border"></td>
+				<td contenteditable='true' tabindex = 4></td>
+				<td contenteditable='true' tabindex = 4></td>
+				<td contenteditable='true' tabindex = 7 class="side-border"></td>
+				<td contenteditable='true' tabindex = 7></td>
+				<td contenteditable='true' tabindex = 7></td>
+			</tr>
+			<tr>
+				<td contenteditable='true' tabindex = 2></td>
+				<td contenteditable='true' tabindex = 2></td>
+				<td contenteditable='true' tabindex = 2></td>
+				<td contenteditable='true' tabindex = 5 class="side-border"></td>
+				<td contenteditable='true' tabindex = 5></td>
+				<td contenteditable='true' tabindex = 5></td>
+				<td contenteditable='true' tabindex = 8 class="side-border"></td>
+				<td contenteditable='true' tabindex = 8></td>
+				<td contenteditable='true' tabindex = 8></td>
+			</tr>
+			<tr>
+				<td contenteditable='true' tabindex = 2></td>
+				<td contenteditable='true' tabindex = 2></td>
+				<td contenteditable='true' tabindex = 2></td>
+				<td contenteditable='true' tabindex = 5 class="side-border"></td>
+				<td contenteditable='true' tabindex = 5></td>
+				<td contenteditable='true' tabindex = 5></td>
+				<td contenteditable='true' tabindex = 8 class="side-border"></td>
+				<td contenteditable='true' tabindex = 8></td>
+				<td contenteditable='true' tabindex = 8></td>
+			</tr>
+			<tr class="border-bottom">
+				<td contenteditable='true' tabindex = 2></td>
+				<td contenteditable='true' tabindex = 2></td>
+				<td contenteditable='true' tabindex = 2></td>
+				<td contenteditable='true' tabindex = 5 class="side-border"></td>
+				<td contenteditable='true' tabindex = 5></td>
+				<td contenteditable='true' tabindex = 5></td>
+				<td contenteditable='true' tabindex = 8 class="side-border"></td>
+				<td contenteditable='true' tabindex = 8></td>
+				<td contenteditable='true' tabindex = 8></td>
+			</tr>
+			<tr>
+				<td contenteditable='true' tabindex = 3></td>
+				<td contenteditable='true' tabindex = 3></td>
+				<td contenteditable='true' tabindex = 3></td>
+				<td contenteditable='true' tabindex = 6 class="side-border"></td>
+				<td contenteditable='true' tabindex = 6></td>
+				<td contenteditable='true' tabindex = 6></td>
+				<td contenteditable='true' tabindex = 9 class="side-border"></td>
+				<td contenteditable='true' tabindex = 9></td>
+				<td contenteditable='true' tabindex = 9></td>
+			</tr>
+			<tr>
+				<td contenteditable='true' tabindex = 3></td>
+				<td contenteditable='true' tabindex = 3></td>
+				<td contenteditable='true' tabindex = 3></td>
+				<td contenteditable='true' tabindex = 6 class="side-border"></td>
+				<td contenteditable='true' tabindex = 6></td>
+				<td contenteditable='true' tabindex = 6></td>
+				<td contenteditable='true' tabindex = 9 class="side-border"></td>
+				<td contenteditable='true' tabindex = 9></td>
+				<td contenteditable='true' tabindex = 9></td>
+			</tr>
+			<tr>
+				<td contenteditable='true' tabindex = 3></td>
+				<td contenteditable='true' tabindex = 3></td>
+				<td contenteditable='true' tabindex = 3></td>
+				<td contenteditable='true' tabindex = 6 class="side-border"></td>
+				<td contenteditable='true' tabindex = 6></td>
+				<td contenteditable='true' tabindex = 6></td>
+				<td contenteditable='true' tabindex = 9 class="side-border"></td>
+				<td contenteditable='true' tabindex = 9></td>
+				<td contenteditable='true' tabindex = 9></td>
+			</tr>
+		</table>
+		<br></br>
+		<button type="button" id="solveS" onclick="Call_SolveSudoku()">Solve Sudoku</button>
+		<br></br>
+		<div id="timemsg"></div>
+		<br></br>
+		<div>Proper documentation of the algorithm will follow. This is Beta testing.</div>
+		<br></br>
+		<div>Email: sudoku.solver.v1@gmail.com</div>		
+	</div>
+	
+	<div id="botRig">
+		<br>
+		<h1>How to play?</h1>
+		<ol>
+			<li>Type in numbers in the grid.</li>
+			<br></br>
+			<li>Click on Solve Sudoku button</li>
+			<br></br>
+			<li>Time taken to solve the puzzle will appear below the button.</li>
+			<br></br>
+			<li>If the algorithm is unable to solve the puzzle, time will not appear.</li>
+			<br>
+		</ol>
+		<div>The algorithm is tested on different sudokus. If it is unable to solve one, please email me with a screenshot of the original puzzle.</div>
+		<br>
+		<div>Thanks for helping me in testing.</div>
+
+	</div>
+	
+	</div>
+
+
+	
+</body>
+
+<script type="text/javascript">
+
+var allNos=[1,2,3,4,5,6,7,8,9],emptycells,table=document.getElementById("table"),gAH=[],indexH=[],affcells=[],levelindex=[],level=-1,selrow,selcol,index2,pNos=[],iH=[],srH=[],scH=[],so=setOps,stop=0,t0,t1,cb=0;function Call_SolveSudoku(){t0=performance.now();SolveSudoku()}
+function SolveSudoku(){for(var a=[],d=[],g=[],f=0,k=[],h=Array(8),e=0;8>=e;e++)h[e]=Array(8);for(e=0;8>=e;e++)for(j=0;8>=j;j++)if(1==table.rows[e].cells[j].innerHTML.length)h[e][j]=Number(table.rows[e].cells[j].innerHTML),table.rows[e].cells[j].style.color="red",f++;else{table.rows[e].cells[j].style.color="black";var m=SearchRows(j),n=SearchCols(e),l=SearchBox(e,j),m=so.union(m,n),l=so.union(m,l),l=so.difference(allNos,l);h[e][j]=l;a.push(e);d.push(j);g.push(l);k.push(l.length)}emptycells=81-f;Print(h);
+f=Array.min(k);1==f&&SolveSudoku();if(1==CheckDigits(h)||0==f){if(1==stop)return 1;0<=level&&(e=indexH[level][2],table.rows[indexH[level][0]].cells[indexH[level][1]].innerHTML==e[e.length-1]?(lia=GetLevel(level,indexH,gAH),level=lia[0],levelindex=lia[1],gAH=lia[2],selrow=lia[3],selcol=lia[4]):levelindex=indexH[level],Print(gAH[level]),e=levelindex[0],l=levelindex[1],m=levelindex[2],n=m.indexOf(levelindex[3]),n<m.length-1&&n++,table.rows[e].cells[l].innerHTML=m[n],levelindex[3]=m[n]);0>=level&&(level=
+-1,indexH=[],gAH=[],iH.splice(-1,1),srH.splice(-1,1),scH.splice(-1,1));SolveSudoku()}if(2<=f&&9>=f){if(1==stop)return 1;gAH.push(h);if(0>level){if(0!=cb){for(ie=0;ie<a.length;ie++)for(iie=0;iie<iH.length;iie++)a[ie]==srH[iie]&&d[ie]==scH[iie]&&(k.splice(ie,1),a.splice(ie,1),d.splice(ie,1),g.splice(ie,1));index2=k.indexOf(Array.min(k));cb=0}else index2=k.indexOf(f);iH.push(index2);selrow=a[index2];selcol=d[index2];srH.push(selrow);scH.push(selcol);indexH.push([a[index2],d[index2],g[index2],g[index2][0]]);
+h[a[index2]][d[index2]]=g[index2][0];table.rows[a[index2]].cells[d[index2]].innerHTML=g[index2][0]}else a=GetFirstNoAffCells(selrow,selcol,h),0!=a&&(selrow=a[0],selcol=a[1],pNos=a[2],indexH.push([selrow,selcol,pNos,pNos[0]]),h[selrow][selcol]=pNos[0],table.rows[selrow].cells[selcol].innerHTML=pNos[0]);Print(h);level++}1!=stop&&0==GetFirstNoAffCells(selrow,selcol,h)&&0==CheckDigits(h)&&0!=emptycells&&(Print(gAH[0]),table.rows[indexH[0][0]].cells[indexH[0][1]].innerHTML=indexH[0][2],level=-1,indexH=
+[],gAH=[],cb=1);if(Infinity==f)return 0==stop&&(t1=performance.now(),document.getElementById("timemsg").innerHTML="Puzzle solved in "+(t1-t0)/1E3+" seconds."),stop=1;SolveSudoku()}function GetLevel(a,d,g){d.pop();g.pop();a--;for(var f=d[a][2],f=f[f.length-1],k=d[a][3];k==f;)a--,f=d[a][2],f=f[f.length-1],k=d[a][3],d.pop(),g.pop();return[a,d[a],g,d[a][0],d[a][1]]}
+function GetFirstNoAffCells(a,d,g){var f=[],k=[],h=[],e=[],m=[],n=[];if(null==a&&null==d)return 0;0<=a&&2>=a&&0<=d&&2>=d&&(mini=0,maxi=2,minj=0,maxj=2);0<=a&&2>=a&&3<=d&&5>=d&&(mini=0,maxi=2,minj=3,maxj=5);0<=a&&2>=a&&6<=d&&8>=d&&(mini=0,maxi=2,minj=6,maxj=8);3<=a&&5>=a&&0<=d&&2>=d&&(mini=3,maxi=5,minj=0,maxj=2);3<=a&&5>=a&&3<=d&&5>=d&&(mini=3,maxi=5,minj=3,maxj=5);3<=a&&5>=a&&6<=d&&8>=d&&(mini=3,maxi=5,minj=6,maxj=8);6<=a&&8>=a&&0<=d&&2>=d&&(mini=6,maxi=8,minj=0,maxj=2);6<=a&&8>=a&&3<=d&&5>=d&&(mini=
+6,maxi=8,minj=3,maxj=5);6<=a&&8>=a&&6<=d&&8>=d&&(mini=6,maxi=8,minj=6,maxj=8);for(gi=mini;gi<=maxi;gi++)for(gj=minj;gj<=maxj;gj++){var l=g[gi][gj];2<=l.length&&n.push([gi,gj,l,l.length])}for(b=0;b<n.length;b++)h.push(n[b][3]);var p=Array.min(h);for(ig=0;8>=ig;ig++)l=g[a][ig],2<=l.length&&e.push([a,ig,l,l.length]);for(r=0;r<e.length;r++)f.push(e[r][3]);a=Array.min(f);for(jg=0;8>=jg;jg++)l=g[jg][d],2<=l.length&&m.push([jg,d,l,l.length]);for(c=0;c<m.length;c++)k.push(m[c][3]);d=Array.min(k);g=Array.min([p,
+a,d]);if(Infinity==g)return 0;switch([p,a,d].indexOf(g)){case 0:return e=h.indexOf(p),[n[e][0],n[e][1],n[e][2]];case 1:return m=f.indexOf(a),[e[m][0],e[m][1],e[m][2]];case 2:return e=k.indexOf(d),[m[e][0],m[e][1],m[e][2]]}return 0}Array.min=function(a){return Math.min.apply(Math,a)};function SearchRows(a){var d=[];for(ii=0;8>=ii;ii++)1==table.rows[ii].cells[a].innerHTML.length&&d.push(Number(table.rows[ii].cells[a].innerHTML));return d}
+function SearchCols(a){var d=[];for(jj=0;8>=jj;jj++)1==table.rows[a].cells[jj].innerHTML.length&&d.push(Number(table.rows[a].cells[jj].innerHTML));return d}
+function SearchBox(a,d){var g,f,k,h,e=[];0<=a&&2>=a&&0<=d&&2>=d&&(g=0,f=2,k=0,h=2);0<=a&&2>=a&&3<=d&&5>=d&&(g=0,f=2,k=3,h=5);0<=a&&2>=a&&6<=d&&8>=d&&(g=0,f=2,k=6,h=8);3<=a&&5>=a&&0<=d&&2>=d&&(g=3,f=5,k=0,h=2);3<=a&&5>=a&&3<=d&&5>=d&&(g=3,f=5,k=3,h=5);3<=a&&5>=a&&6<=d&&8>=d&&(g=3,f=5,k=6,h=8);6<=a&&8>=a&&0<=d&&2>=d&&(g=6,f=8,k=0,h=2);6<=a&&8>=a&&3<=d&&5>=d&&(g=6,f=8,k=3,h=5);6<=a&&8>=a&&6<=d&&8>=d&&(g=6,f=8,k=6,h=8);for(bi=g;bi<=f;bi++)for(bj=k;bj<=h;bj++)1==table.rows[bi].cells[bj].innerHTML.length&&
+e.push(Number(table.rows[bi].cells[bj].innerHTML));return e}function Print(a){for(pi=0;8>=pi;pi++)for(pj=0;8>=pj;pj++)table.rows[pi].cells[pj].innerHTML=a[pi][pj],table.rows[pi].cells[pj].style.color=void 0===a[pi][pj].length?"red":"black"}
+function CheckDigits(a){for(row=0;8>=row;row++){NosInRow=[];for(col=0;8>=col;col++){var d=a[row][col];void 0===d.length&&NosInRow.push(d)}if(1==HasDuplicate(NosInRow))return 1}for(col=0;8>=col;col++){NosInCol=[];for(row=0;8>=row;row++)d=a[row][col],void 0===d.length&&NosInCol.push(d);if(1==HasDuplicate(NosInCol))return 1}var g=[0,0,0,3,3,3,6,6,6],f=[2,2,2,5,5,5,8,8,8],k=[0,3,6,0,3,6,0,3,6],h=[2,5,8,2,5,8,2,5,8];for(it=0;8>=it;it++)for(row=g[it];row<=f[it];row++){NosInBox=[];for(col=k[it];col<=h[it];col++)d=
+a[row][col],void 0===d.length&&NosInBox.push(d);if(1==HasDuplicate(NosInBox))return 1}return 0}function HasDuplicate(a){a=a.sort();var d=0;for(ai=0;ai<a.length-1;ai++)a[ai+1]==a[ai]&&(d=1);return d};
+	
+</script>
+
+<style>
+
+  	body, select
+	{
+	  font-family: 'Droid Sans', serif;
+      font-size: 14px;
+	}
+	select, input, label
+	{
+	  padding: 4px;
+	}
+	label#label1
+	{
+	  margin-left: 30px;
+	}
+	button#solveS
+	{
+	  display: inline-block;
+	  background-color: #03a9f4;
+	  color: #fff;
+	  cursor: pointer;
+	  font: 500 14px/20px Roboto,sans-serif;
+	  height: 36px;
+	  min-width: 36px;
+	  outline: 0;
+	  overflow: hidden;
+	  padding: 8 px;
+	  text-align: center;
+	  text-decoration: none;
+	  text-overflow: ellipsis;
+	  text-transform: uppercase;
+	  transition: background-color .2s,box-shadow .2s;
+	  vertical-align: baseline;
+	  white-space: nowrap;
+	  border-radius: 0px;
+	  align-items: flex-start;
+	  letter-spacing: normal;
+	  word-spacing: normal;
+	  text-indent: 0px;
+	  text-shadow: none;
+	  border-spacing: 0;
+	  border-collapse: collapse;
+	}
+	div#botleft
+	{
+	   margin-left: 15px;
+	   width:480px;
+	   float: left;
+	}
+	div#botRig
+	{
+	   margin-left: 485px;
+	   margin-right: 15px;
+	}
+	div#eq1
+	{
+	  margin-left: 40%
+	}
+	div#eq2
+	{
+	  margin-left: 43%
+	}
+	h1#heading
+	{
+	  text-align: center;
+	  text-transform: uppercase;
+	}
+	tr,td
+	{
+	  width: 40px;
+	  padding-top: 0.5em;
+	  padding-bottom: 0.5em;
+	  font-size: 16px;
+	}
+	tr.border-bottom 
+	{
+      border-bottom: solid 3px red;
+    }
+	td.side-border
+	{
+	  border-left: solid 3px red;
+	}
+	td 
+    {
+      text-align: center;
+      vertical-align: middle;
+    }
+</style>
+
+</html>
