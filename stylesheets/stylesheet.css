@@ -1,0 +1,85 @@
+body, select
+	{
+	  font-family: 'Droid Sans', serif;
+      font-size: 14px;
+	}
+	select, input, label
+	{
+	  padding: 4px;
+	}
+	label#label1
+	{
+	  margin-left: 30px;
+	}
+	button#solveS
+	{
+	  display: inline-block;
+	  background-color: #03a9f4;
+	  color: #fff;
+	  cursor: pointer;
+	  font: 500 14px/20px Roboto,sans-serif;
+	  height: 36px;
+	  min-width: 36px;
+	  outline: 0;
+	  overflow: hidden;
+	  padding: 8 px;
+	  text-align: center;
+	  text-decoration: none;
+	  text-overflow: ellipsis;
+	  text-transform: uppercase;
+	  transition: background-color .2s,box-shadow .2s;
+	  vertical-align: baseline;
+	  white-space: nowrap;
+	  border-radius: 0px;
+	  align-items: flex-start;
+	  letter-spacing: normal;
+	  word-spacing: normal;
+	  text-indent: 0px;
+	  text-shadow: none;
+	  border-spacing: 0;
+	  border-collapse: collapse;
+	}
+	div#botleft
+	{
+	   margin-left: 15px;
+	   width:480px;
+	   float: left;
+	}
+	div#botRig
+	{
+	   margin-left: 485px;
+	   margin-right: 15px;
+	}
+	div#eq1
+	{
+	  margin-left: 40%
+	}
+	div#eq2
+	{
+	  margin-left: 43%
+	}
+	h1#heading
+	{
+	  text-align: center;
+	  text-transform: uppercase;
+	}
+	tr,td
+	{
+	  width: 40px;
+	  padding-top: 0.5em;
+	  padding-bottom: 0.5em;
+	  font-size: 16px;
+	}
+	tr.border-bottom 
+	{
+      border-bottom: solid 3px red;
+    }
+	td.side-border
+	{
+	  border-left: solid 3px red;
+	}
+	td 
+    {
+      text-align: center;
+      vertical-align: middle;
+    }
